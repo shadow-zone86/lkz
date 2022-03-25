@@ -1,0 +1,1383 @@
+html, body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+/************************************************* Переменные (start) **************************************************/
+:root {
+    --rosatom-color: rgb(34, 134, 247);
+    --shadow-color: rgba(0, 0, 0, .2);
+    --default-color: rgba(78, 95, 104, 0.33);
+    --green-color: rgb(7, 189, 153);
+    --alt-color: rgba(255, 255, 255, .5);
+    --white-color: rgb(255, 255, 255);
+    --black-color: rgb(0, 0, 0);
+    --blue-color: rgb(84, 183, 236);
+    --fox-color: rgb(242, 148, 35);
+    --link-color: rgb(78, 95, 104);
+    --tinting-color: rgba(0, 0, 0, 0.5);
+    --vanguard-color: rgb(255, 91, 35);
+    --vue-color: rgb(66, 184, 131);
+}
+/************************************************** Переменные (end) ***************************************************/
+
+/**************************************************** Общее (start) ****************************************************/
+.minnesota-active {
+    color: var(--vanguard-color);
+}
+
+.minnesota-success {
+    color: var(--vue-color);
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 25px;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.modal-content {
+    border-radius: 0;
+    border-color: var(--rosatom-color);
+}
+
+.rogue {
+    color: var(--white-color);
+}
+
+.minnesota-column-percent-3 {
+    white-space: normal;
+    width: 3%;
+    text-align: center;
+}
+
+.minnesota-column-percent-10 {
+    white-space: normal;
+    width: 10%;
+    text-align: center;
+}
+
+.minnesota-column-percent-19 {
+    white-space: normal;
+    width: 19.4%;
+    /*text-align: center;*/
+}
+
+.minnesota-column-percent-43 {
+    white-space: normal;
+    width: 43.5%;
+    text-align: left;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: right;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px -110px 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+/***************************************************** Общее (end) *****************************************************/
+
+/***************************************** Стили для главной страницы (start) *****************************************/
+/* Отступ для контента с информацией (ссылки, формы, калькулятор) */
+.body-content-first {
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+/* Отступы между блоками */
+.minnesota-north-star {
+    padding-bottom: 25px;
+}
+
+/* Стили для подписей блоков с контентом информации (ссылки, формы, калькулятор) */
+.minnesota-dive {
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 25px;
+}
+
+/* Рамка (тень) */
+.rosatom-frame-milwaukee {
+    border: 1px solid var(--default-color);
+    box-shadow: 0 0 10px 0 var(--shadow-color);
+}
+
+/* Рамка (тень) - наведение */
+.rosatom-frame-minnesota {
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+/* Рамка (размеры) */
+.nautilus-power {
+    height: 335px;
+}
+
+/* Отступы для подписей блоков с ЛКЗ */
+.nautilus {
+    margin: 50px 0 50px;
+}
+
+/* Цвет иконки "Электросети" */
+#frame-electricity_span {
+    color: var(--rosatom-color);
+}
+
+/* Цвет иконки "Теплосети" */
+#frame-warm_span {
+    color: var(--rosatom-color);
+}
+
+/* Цвет иконки "Водоснабжение" */
+#frame-water_span {
+    color: var(--rosatom-color);
+}
+/****************************************** Стили для главной страницы (end) ******************************************/
+
+/**************************************** Стили блоков главной страницы (start) ****************************************/
+/* Делаем из всех блоков ссылки */
+.new-york a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+#frame-01 {
+    background-color: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-01:hover {
+    background: url("../image/picture/government-decree-861.jpg") var(--alt-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-02 {
+    background-color: var(--white-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    transition: 0.5s;
+}
+#frame-02:hover {
+    background: url("../image/picture/federal-law-190.jpg") var(--alt-color);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-03 {
+    background-color: var(--white-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    transition: 0.5s;
+}
+#frame-03:hover {
+    background: url("../image/picture/federal-law-416.jpg") var(--alt-color);
+    background-position: left;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-04 {
+    background-color: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-04:hover {
+    background: url("../image/picture/government-decree-644.jpg") var(--alt-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-05 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-05:hover {
+    background: url("../image/picture/form-2.12.jpg") var(--alt-color);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-06 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-06:hover {
+    background: url("../image/picture/form-3.10.jpg") var(--alt-color);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-07 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-07:hover {
+    background: url("../image/picture/form-4.8.jpg") var(--alt-color);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+
+#frame-08 {
+     background-color: var(--fox-color);
+     background-position: bottom;
+     background-size: cover;
+     background-blend-mode: color;
+     color: var(--white-color);
+    transition: 0.5s;
+}
+#frame-08:hover {
+    background: url("../image/picture/calculator.jpg") var(--alt-color);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+}
+/***************************************** Стили блоков главной страницы (end) *****************************************/
+
+/*************************************************** Кнопки (start) ***************************************************/
+.btn-falcon {
+    color: var(--rosatom-color);
+    background-color: var(--white-color);
+    border-color: var(--rosatom-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-falcon:hover {
+    color: var(--blue-color);
+    background-color: var(--white-color);
+    border-color: var(--blue-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+
+.btn-wolf {
+    color: var(--black-color);
+    background-color: var(--white-color);
+    border-color: var(--shadow-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-wolf:hover {
+    color: var(--black-color);
+    background-color: var(--white-color);
+    border-color: var(--tinting-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+
+.btn-bear {
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    border-color: var(--blue-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-bear:hover {
+    color: var(--white-color);
+    background-color: var(--rosatom-color);
+    border-color: var(--rosatom-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+
+.btn-elephant {
+    color: var(--white-color);
+    background-color: var(--green-color);
+    border-color: var(--green-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-elephant:hover {
+    color: var(--white-color);
+    background-color: var(--vue-color);
+    border-color: var(--vue-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+
+.btn-fox {
+    color: var(--white-color);
+    background-color: var(--fox-color);
+    border-color: var(--fox-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-fox:hover {
+    color: var(--white-color);
+    background-color: var(--vanguard-color);
+    border-color: var(--vanguard-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+
+.btn-panther {
+    color: var(--white-color);
+    background-color: var(--link-color);
+    border-color: var(--white-color);
+    border-radius: 0;
+    letter-spacing: 0;
+    transition: 0.5s;
+}
+.btn-panther:hover {
+    color: var(--white-color);
+    background-color: var(--black-color);
+    border-color: var(--white-color);
+    border-radius: 0;
+    letter-spacing: 0;
+}
+/**************************************************** Кнопки (end) ****************************************************/
+
+/**************************************** Навигационное адаптивное меню (start) ****************************************/
+/* Подменю профиля (администратор) */
+.header__submenu_first {
+    background: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    position: absolute;
+    left: 200px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 240px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+
+/* Подменю ЛКЗ (администратор) */
+.header__submenu_second {
+    background: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    position: absolute;
+    left: 300px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 240px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+
+/* Подменю профиля (пользователь) */
+.header__submenu_firstuser {
+    background: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 240px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+
+/* Подменю ЛКЗ (пользователь) */
+.header__submenu_seconduser {
+    background: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    position: absolute;
+    left: 100px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 240px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--shadow-color);
+    z-index: 4;
+}
+
+.header__logo {
+    flex: 0 0 180px;
+    position: relative;
+    z-index: 5;
+}
+
+.header__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    letter-spacing: .0rem;
+    margin-top: 15px;
+}
+
+.header__list li {
+    list-style: none;
+    margin: 0 0 0 20px;
+}
+
+.header__link {
+    color: var(--link-color);
+    text-transform: uppercase;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.header__link:hover {
+    color: var(--rosatom-color);
+    text-transform: uppercase;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.header__logo img {
+    max-width: 100%;
+}
+
+.content {
+    padding: 80px 0 0 0;
+}
+
+.header__burger {
+    display: none;
+}
+
+@media(max-width:991px) {
+    body.lock {
+        overflow: hidden;
+    }
+    .header__body {
+        height: 50px;
+    }
+    .header__logo {
+        flex: 0 0 100px;
+    }
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 5;
+        cursor: pointer;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: var(--link-color);
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger:before,
+    .header__burger:after {
+        content: '';
+        background-color: var(--link-color);
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger:before {
+        top: 0;
+    }
+    .header__burger:after {
+        bottom: 0;
+    }
+    .header__burger.active span {
+        transform: scale(0);
+    }
+    .header__burger.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .header__burger.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 340px;
+        background-color: var(--white-color);
+        border-bottom: 1px solid var(--shadow-color);
+        overflow: auto;
+        z-index: 3;
+        padding: 70px 10px 20px 10px;
+        transition: all 0.5s ease 0s;
+    }
+    .header__menu.active {
+        top: 0;
+    }
+    .header__list {
+        display: block;
+    }
+    .header__list li {
+        margin: 0 0 20px 0;
+    }
+    .header__submenu_first {
+        background: var(--white-color);
+        border: 1px solid var(--rosatom-color);
+        position: absolute;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        width: 240px;
+        transform: perspective(600px) rotateX(-90deg);
+        transform-origin: 0% 0%;
+        transition: .6s ease-in-out;
+    }
+    .header__submenu_second {
+        background: var(--white-color);
+        border: 1px solid var(--rosatom-color);
+        position: absolute;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        width: 240px;
+        transform: perspective(600px) rotateX(-90deg);
+        transform-origin: 0% 0%;
+        transition: .6s ease-in-out;
+    }
+    .header__submenu_firstuser {
+        background: var(--white-color);
+        border: 1px solid var(--rosatom-color);
+        position: absolute;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        width: 240px;
+        transform: perspective(600px) rotateX(-90deg);
+        transform-origin: 0% 0%;
+        transition: .6s ease-in-out;
+    }
+    .header__submenu_seconduser {
+        background: var(--white-color);
+        border: 1px solid var(--rosatom-color);
+        position: absolute;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        width: 240px;
+        transform: perspective(600px) rotateX(-90deg);
+        transform-origin: 0% 0%;
+        transition: .6s ease-in-out;
+    }
+}
+
+.header__list > li:hover .header__submenu_first{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.header__list > li:hover .header__submenu_second{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.header__list > li:hover .header__submenu_firstuser{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.header__list > li:hover .header__submenu_seconduser{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.header__submenu_first li a {
+    line-height: 36px;
+    padding: 0 -325px;
+}
+
+.header__submenu_second li a {
+    line-height: 36px;
+    padding: 0 -325px;
+}
+
+.header__submenu_firstuser li a {
+    line-height: 36px;
+    padding: 0 -325px;
+}
+
+.header__submenu_seconduser li a {
+    line-height: 36px;
+    padding: 0 -325px;
+}
+
+.header__submenu_first li {
+     list-style-type: none;
+}
+
+.header__submenu_second li {
+    list-style-type: none;
+}
+
+.header__submenu_firstuser li {
+    list-style-type: none;
+}
+
+.header__submenu_seconduser li {
+    list-style-type: none;
+}
+/***************************************** Навигационное адаптивное меню (end) *****************************************/
+
+/**************************************** Вертикальная линия с кнопками (start) ****************************************/
+.vertical {
+    border-left: 1px dotted var(--shadow-color);
+    height: 100%;
+    position: absolute;
+    left: 96%;
+    margin-left: -3px;
+    top: 0;
+}
+
+/* Кнопка выхода на сайт предприятия */
+.btn-minnesota:hover {
+    color: var(--rosatom-color);
+    background-color: var(--white-color);
+    border-color: var(--shadow-color);
+    padding: 15px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.btn-minnesota {
+    color: var(--shadow-color);
+    background-color: var(--white-color);
+    border-color: var(--shadow-color);
+    padding: 15px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15%;
+    margin-left: -25px;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+/* Кнопка наверх */
+.btn-milwaukee.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn-milwaukee:hover {
+    color: var(--rosatom-color);
+    background-color: var(--white-color);
+    border-color: var(--shadow-color);
+    padding: 15px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.btn-milwaukee {
+    color: var(--shadow-color);
+    background-color: var(--white-color);
+    border-color: var(--shadow-color);
+    padding: 15px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 25%;
+    margin-left: -25px;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+/***************************************** Вертикальная линия с кнопками (end) *****************************************/
+
+/*************************************************** Баннер (start) ***************************************************/
+.banner img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.banner__content {
+    position: absolute;
+    height: 360px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.banner__breadcrumbs {
+    position: relative;
+    top: -245px;
+}
+
+.banner__breadcrumbs a {
+    color: var(--rosatom-color);
+    text-decoration: none;
+}
+
+.banner__breadcrumbs > .breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: var(--tinting-color);
+    border-radius: 4px;
+}
+
+.banner__index_text {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    margin: 0 0 55px;
+}
+
+.banner__breadcrumbs > .breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: var(--tinting-color);
+    border-radius: 0px;
+}
+/**************************************************** Баннер (end) ****************************************************/
+
+/********************************************* Справка-электросети (start) *********************************************/
+#temporary-connection {
+    display: none;
+}
+#permanent-connection-15 {
+    display: none;
+}
+#permanent-connection-150 {
+    display: none;
+}
+#permanent-connection-670 {
+    display: none;
+}
+#permanent-connection-max {
+    display: none;
+}
+#power-redistribution {
+    display: none;
+}
+/********************************************** Справка-электросети (end) **********************************************/
+
+/********************************************** Список документов (start) **********************************************/
+.b2 {
+    position: relative;
+    bottom: 20%;
+}
+
+#electricity-document {
+    padding-top: 45px;
+}
+
+.minnesota-list {
+    list-style-type: none;
+    padding: 7px;
+    margin: 7px;
+}
+
+#list-01 {
+    background-color: var(--white-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    transition: 0.5s;
+}
+#list-01:hover {
+    background: var(--alt-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-02 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-02:hover {
+    background: var(--rosatom-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-03 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-03:hover {
+    background: var(--rosatom-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-04 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-04:hover {
+    background: var(--rosatom-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-05 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-05:hover {
+    background: var(--rosatom-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-06 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-06:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-07 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-07:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-08 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-08:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-09 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-09:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-10 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-10:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-11 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-11:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-12 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-12:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-13 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-13:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-14 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-14:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-15 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-15:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-16 {
+    background-color: var(--blue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-16:hover {
+    background: var(--rosatom-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-17 {
+    background-color: var(--white-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    transition: 0.5s;
+}
+#list-17:hover {
+    background: var(--alt-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--black-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-18 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-18:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-19 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-19:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-20 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-20:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-21 {
+    background-color: var(--fox-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-21:hover {
+    background: var(--vanguard-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+
+#list-22 {
+    background-color: var(--vue-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    transition: 0.5s;
+}
+#list-22:hover {
+    background: var(--green-color);
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: color;
+    color: var(--white-color);
+    border: 1px solid var(--rosatom-color);
+    box-shadow: 20px -15px 10px 5px var(--shadow-color);
+}
+/*********************************************** Список документов (end) ***********************************************/
